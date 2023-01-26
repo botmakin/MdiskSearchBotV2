@@ -10,11 +10,11 @@ async def help_handler(_, event: Message):
     await event.reply_text(Config.ABOUT_HELP_TEXT.format(event.from_user.mention),
         reply_markup=InlineKeyboardMarkup([
             [
-            InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/{Config.BOT_USERNAME}?startgroup=true')
+            InlineKeyboardButton('↪️ Add Me To Your Groups ↩️', url=f'http://t.me/{Config.BOT_USERNAME}?startgroup=true')
             ],
 
-             [InlineKeyboardButton("About", callback_data="About_msg"),
-             InlineKeyboardButton("Help", callback_data="Help_msg")
+             [InlineKeyboardButton("🧩 About 🧩", callback_data="About_msg"),
+             InlineKeyboardButton("🎭 Help 🎭", callback_data="Help_msg")
              ]
         ])
     )                        
@@ -34,11 +34,11 @@ async def mdisk_handler(_, event: Message):
     await event.reply_text(Config.ABOUT_MDISK_TEXT.format(event.from_user.mention),
         reply_markup=InlineKeyboardMarkup([
             [
-            InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/{Config.BOT_USERNAME}?startgroup=true')
+            InlineKeyboardButton('↪️ Add Me To Your Groups ↩️', url=f'http://t.me/{Config.BOT_USERNAME}?startgroup=true')
             ],
 
-             [InlineKeyboardButton("TeraBox", callback_data="Terabox_msg"),
-             InlineKeyboardButton('Watch Video', url='https://t.me/CyniteBackup/17')
+             [InlineKeyboardButton("🔗 TeraBox🔗 ", callback_data="Terabox_msg"),
+             InlineKeyboardButton('👀 Watch Video 👀', url='https://t.me/how_to_watch_mdisk_link/2')
              ]
         ])
     )
@@ -48,11 +48,11 @@ async def terabox_handler(_, event: Message):
     await event.reply_text(Config.ABOUT_TERABOX_TEXT.format(event.from_user.mention),
         reply_markup=InlineKeyboardMarkup([
             [
-            InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/{Config.BOT_USERNAME}?startgroup=true')
+            InlineKeyboardButton('↪️ Add Me To Your Groups ↩️', url=f'http://t.me/{Config.BOT_USERNAME}?startgroup=true')
             ],
 
-             [InlineKeyboardButton("Mdisk", callback_data="Mdisk_msg"),
-             InlineKeyboardButton('Watch Photo', url='https://telegra.ph/file/abdc2f0e2d59f6bb67fa5.jpg')
+             [InlineKeyboardButton("🔗 Mdisk 🔗", callback_data="Mdisk_msg"),
+             InlineKeyboardButton('👀 Watch Photo 👀', url='https://telegra.ph/file/abdc2f0e2d59f6bb67fa5.jpg')
              ]
         ])
     )
@@ -68,7 +68,7 @@ async def leave_a_chat(bot, message):
         chat = chat
     try:
         buttons = [[
-            InlineKeyboardButton('Support', url=f'https://t.me/Cynitesupport')
+            InlineKeyboardButton('🚧 Support 🚧', url=f'https://t.me/movies_halt_owner_bot')
         ]]
         reply_markup=InlineKeyboardMarkup(buttons)
         await bot.send_message(
@@ -183,11 +183,11 @@ async def start_handler(_,event: Message):
         caption=Config.START_MSG.format(event.from_user.mention),
         reply_markup=InlineKeyboardMarkup([
             [
-            InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/{Config.BOT_USERNAME}?startgroup=true')
+            InlineKeyboardButton('↪️ Add Me To Your Groups ↩️', url=f'http://t.me/{Config.BOT_USERNAME}?startgroup=true')
             ],
 
-             [InlineKeyboardButton("About", callback_data="About_msg"),
-             InlineKeyboardButton("Help", callback_data="Help_msg")
+             [InlineKeyboardButton("🧩 About 🧩", callback_data="About_msg"),
+             InlineKeyboardButton("🎭 Help 🎭", callback_data="Help_msg")
              ]
         ])
     )
@@ -217,7 +217,7 @@ async def request_handler(c,m: Message):
     if not group_info["has_access"] or not await db.is_group_verified(group_id):
         REPLY_MARKUP = InlineKeyboardMarkup([
             [
-                InlineKeyboardButton('Request Access', callback_data=f'request_access#{m.chat.id}#{m.from_user.id}'),
+                InlineKeyboardButton('👀 Request Access 👀', callback_data=f'request_access#{m.chat.id}#{m.from_user.id}'),
             ],
 
         ])
@@ -272,7 +272,7 @@ async def addb_handler(c, m: Message):
 
     ])      
 
-            await c.send_message(Config.LOG_CHANNEL,  f"Join the channel and then alllow. \n\n#NewDBChannel\n\nDB Chnl Invite Link: {invite_link.invite_link}\nGroup:`{group_id}`\n\nNote: This group has been already has access", reply_markup=REPLY_MARKUP)
+            await c.send_message(Config.LOG_CHANNEL,  f"Join the channel and then allow. \n\n#NewDBChannel\n\nDB Chnl Invite Link: {invite_link.invite_link}\nGroup:`{group_id}`\n\nNote: This group has been already has access", reply_markup=REPLY_MARKUP)
             return await m.reply_text("Database Channel Request Sent successfully. Wait for the admin to approve the Your Database channel. You will be notified In Your Privately From The Bot", )
         else:
             return await m.reply_text("Make the bot admin in the channel and /database -100xxx")
