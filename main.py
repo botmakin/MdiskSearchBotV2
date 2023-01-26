@@ -47,7 +47,7 @@ async def message_handler(event):
 
 **You Have To Join Our Update Channel To Use Me ✅**
 
-**Click Below Button To Join Now.👇🏻**''', buttons=Button.url('🍿Updates Channel🍿', f'https://t.me/{Config.UPDATES_CHANNEL_USERNAME}'))
+**Click Below Button To Join Now.👇🏻**''', buttons=Button.url('🎃 Updates Channel 🎃', f'https://t.me/{Config.UPDATES_CHANNEL_USERNAME}'))
             await asyncio.sleep(Config.AUTO_DELETE_TIME)
             return await haha.delete()
 
@@ -60,7 +60,7 @@ async def message_handler(event):
         if not args:
             return
 
-        txt = await event.reply('**Printing Links For "{}" 🔍**'.format(event.text))
+        txt = await event.reply('**Searching For "{}" 🔍**'.format(event.text))
 
 
 
@@ -102,15 +102,15 @@ async def message_handler(event):
             finalsearch.append(msg)
 
         if c <= 0:
-            answer = f'''** Sorry {event.sender.first_name} No Results Found For {event.text}**
-
-**Please check the spelling on** [Google](http://www.google.com/search?q={event.text.replace(' ', '%20')}%20Movie) 🔍
-**Click On The Help To Know How To Watch**
+            answer = f'''**No Results Found For {event.text}**
+**Type Only Movie Name 💬**
+**Check Spelling On** [Google](http://www.google.com/search?q={event.text.replace(' ', '%20')}%20Movie) 🔍
     '''
 
-            newbutton = [Button.url('Help🙋',
-                                    f'https://t.me/postsearchbot?start=Watch')]
-
+            newbutton = [Button.url('Click To Check Spelling ✅',
+                                    f'http://www.google.com/search?q={event.text.replace(" ", "%20")}%20Movie')], [
+                            Button.url('Click To Check Release Date 📅',
+                                    f'http://www.google.com/search?q={event.text.replace(" ", "%20")}%20Movie%20Release%20Date')]
             await txt.delete()
             result = await event.reply(answer, buttons=newbutton, link_preview=False)
             await asyncio.sleep(Config.AUTO_DELETE_TIME)
@@ -129,10 +129,10 @@ async def message_handler(event):
             title=event.text,
             author=Config.BOT_USERNAME
         )
-        message = f'**Click Here 👇 For "{event.text}"**\n\n[🍿🎬 {str(event.text).upper()}\n🍿🎬 {str("Click me for results").upper()}]({tgraph_result})'
+        message = f'**Click Here 👇🏻 For "{event.text}"**\n\n[🌹🎬 {str(event.text).upper()}\n🌹🎬 {str("Click me for results").upper()}]({tgraph_result})'
 
         newbutton = [Button.url('How To Watch ❓',
-                                    f'https://t.me/postsearchbot?start=Watch')]
+                                    f'https://t.me/how_to_watch_mdisk_link/2')]
 
         await txt.delete()
         await asyncio.sleep(0.5)
@@ -144,7 +144,7 @@ async def message_handler(event):
     except Exception as e:
         print(e)
         await txt.delete()
-        result = await event.reply("I am Unable Search,Please Search In @PostSearchBOT🙏")
+        result = await event.reply("I am Unable to Search,Please Search In @ShizukaMinamotobot 🙏")
         await asyncio.sleep(Config.AUTO_DELETE_TIME)
         await event.delete() 
         return await result.delete()
